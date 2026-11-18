@@ -1,27 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Chonburi&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,700;1,9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-cream: #F6EFE1;
+  --forest-green: #334B35;
+  --forest-green-dark: #273A29;
+  --marigold-gold: #FDAE16;
+  --marigold-dark: #E69B0A;
+  --coral-orange: #FD6036;
+  --rich-black: #111311;
+  --card-dark: #161816;
+  --pure-white: #FFFFFF;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-cream);
+  color: var(--rich-black);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: var(--bg-cream);
+  color: var(--rich-black);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Typography Classes */
+.font-display {
+  font-family: 'Fraunces', 'Chonburi', Georgia, serif;
+}
+
+.font-body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+::selection {
+  background-color: var(--marigold-gold);
+  color: var(--rich-black);
+}
+
+/* Outline Wireframe Text (like the RESUME watermark in Behance design) */
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(253, 174, 22, 0.45);
+  user-select: none;
+  pointer-events: none;
+}
+
+.outline-text-white {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.25);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Four-Point Sparkle Icon */
+.sparkle-star {
+  display: inline-block;
+  color: var(--coral-orange);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--forest-green);
+  border-radius: 4px;
+}
+
+/* Interactive transitions */
+a, button {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
